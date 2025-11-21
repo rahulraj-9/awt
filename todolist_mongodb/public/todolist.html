@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List</title>
+</head>
+<body>
+  <h2>Welcome to your To-Do List</h2>
+
+  <form id="todoForm" onsubmit="addItem(); return false;">
+    <input type="text" id="task" placeholder="Enter task">
+    <button type="submit">Add</button>
+  </form>
+
+  <ul id="taskList"></ul>
+
+  <br>
+  <a href="/logout">Logout</a>
+
+  <script>
+    function addItem() {
+      let task = document.getElementById("task").value;
+      if (task.trim() === "") return;
+      let li = document.createElement("li");
+      li.textContent = task;
+      document.getElementById("taskList").appendChild(li);
+      document.getElementById("task").value = "";
+    }
+  </script>
+</body>
+</html>
