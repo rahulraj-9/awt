@@ -1,0 +1,20 @@
+{
+  "name": "experiment_10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "sync": "browser-sync start -p 'localhost:3000' --PORT 4000 --files 'public/*.html, public/*.js, public/*.css, public/*.*' --no-inject-changes --ws",
+    "dev": "concurrently \"npm run server\" \"npm run sync\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browsersync": "^0.0.1-security",
+    "concurrently": "^9.2.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
